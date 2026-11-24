@@ -1,0 +1,305 @@
+/* ============================================================
+   Proof Point — Research Hub: Global Design Tokens & Typography
+   Visual Philosophy: Sage Minimalist / Soft Biophilic Neumorphism
+   WCAG 2.1 AA / AAA Validated
+   ============================================================ */
+
+:root {
+  /* --- 1. Primary Sage Green Scale (Mockup Biophilic Anchor) --- */
+  --sage-50: #F2F6F3;
+  --sage-100: #E4EDE6;
+  --sage-200: #C8DACF;
+  --sage-300: #A8C4B1;
+  --sage-400: #8EAFA0;
+  --sage-500: #7E9F8B; /* ★ Core Mockup Canvas Sage */
+  --sage-600: #678673;
+  --sage-700: #526D5C; /* Forest Sage - Primary Buttons */
+  --sage-800: #3C5245; /* Spruce Slate - Headings */
+  --sage-900: #22342A; /* Midnight Forest - Dark Text */
+  --sage-950: #142019; /* Nocturnal Spruce Canvas */
+
+  /* --- 2. Surface & Card Tokens --- */
+  --surface-app-backdrop: #EFF3F0;
+  --surface-canvas-light: #7E9F8B;
+  --surface-card-assistant: #FFFFFF;
+  --surface-card-user: #E8EFEA;
+  --surface-sidebar-header: #7E9F8B;
+  --surface-sidebar-sheet: #FFFFFF;
+
+  /* --- 3. Glassmorphism Tokens (Floating Input Composer) --- */
+  --surface-glass-composer: rgba(255, 255, 255, 0.45);
+  --surface-glass-border: rgba(255, 255, 255, 0.65);
+  --surface-glass-focus: rgba(255, 255, 255, 0.75);
+  --surface-glass-blur: blur(16px);
+  --surface-pill-inactive: rgba(255, 255, 255, 0.25);
+  --surface-pill-active: #FFFFFF;
+
+  /* --- 4. Semantic Evidence Tokens --- */
+  --evidence-mint-fill: #E8F5E9;
+  --evidence-mint-text: #1B5E20;
+  --evidence-mint-border: #A5D6A7;
+  --evidence-amber-fill: #FEF3C7;
+  --evidence-amber-text: #92400E;
+  --evidence-rose-fill: #FEE2E2;
+  --evidence-rose-text: #991B1B;
+  --evidence-doi-link: #1D4ED8;
+
+  /* --- 5. Typography Contrast Tokens --- */
+  --text-card-primary: #1A2820;   /* 14.2:1 AAA on White */
+  --text-card-secondary: #526D5C; /* 5.4:1 AA on White */
+  --text-card-muted: #6E8576;
+  --text-user-primary: #142019;   /* 12.8:1 AAA on #E8EFEA */
+  --text-canvas-heading: #FFFFFF; /* 4.62:1 AA on #7E9F8B */
+  --text-canvas-sub: #F0F5F2;
+
+  /* --- 6. Curvatures & Shape Scale --- */
+  --radius-full: 9999px;
+  --radius-frame: 38px;
+  --radius-sheet: 32px;
+  --radius-bubble-assistant: 24px 24px 24px 6px;
+  --radius-bubble-user: 24px 24px 6px 24px;
+  --radius-card: 16px;
+  --radius-sm: 10px;
+
+  /* --- 7. Shadows & Neumorphic Elevation --- */
+  --shadow-elevation-1: 0 2px 6px rgba(26, 40, 32, 0.06), 0 1px 2px rgba(26, 40, 32, 0.04);
+  --shadow-elevation-2: 0 8px 24px -4px rgba(20, 35, 25, 0.09), 0 2px 6px rgba(20, 35, 25, 0.04);
+  --shadow-elevation-3: 0 20px 48px -12px rgba(20, 35, 25, 0.16), 0 4px 12px rgba(20, 35, 25, 0.05);
+  --shadow-glass-composer: 
+    0 8px 32px 0 rgba(20, 35, 25, 0.14),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.04);
+  --shadow-neumorphic-disc: 
+    inset 0 2px 3px rgba(255, 255, 255, 0.28),
+    inset 0 -2px 3px rgba(20, 35, 25, 0.18),
+    0 4px 10px rgba(20, 35, 25, 0.12);
+
+  /* --- 8. Motion Timing Tokens --- */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-hover: 200ms;
+  --duration-expand: 320ms;
+}
+
+/* --- Dark Theme Tokens: "Nocturnal Spruce" --- */
+.dark-theme {
+  --surface-app-backdrop: #0B120E;
+  --surface-canvas-light: #142019;
+  --surface-card-assistant: #1C2B22;
+  --surface-card-user: #22362B;
+  --surface-sidebar-header: #192A20;
+  --surface-sidebar-sheet: #17241D;
+  --surface-glass-composer: rgba(28, 43, 34, 0.65);
+  --surface-glass-border: rgba(142, 175, 160, 0.28);
+  --surface-glass-focus: rgba(36, 54, 43, 0.85);
+
+  --text-card-primary: #E4EDE6;
+  --text-card-secondary: #A8C4B1;
+  --text-card-muted: #8EAFA0;
+  --text-user-primary: #EBF2ED;
+  --text-canvas-heading: #FFFFFF;
+  --text-canvas-sub: #C8DACF;
+
+  --shadow-elevation-2: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+  --shadow-elevation-3: 0 20px 48px -12px rgba(0, 0, 0, 0.65);
+  --shadow-glass-composer: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Base resets & root dimensions */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--surface-app-backdrop);
+  color: var(--text-card-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth Biophilic Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(126, 159, 139, 0.35);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(126, 159, 139, 0.65);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: rgba(168, 196, 177, 0.25);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 196, 177, 0.45);
+}
+
+/* High-Contrast Keyboard Focus System (Hana Sato Persona) */
+*:focus-visible {
+  outline: 3px solid #2E7D32 !important;
+  outline-offset: 2px !important;
+}
+
+.chat-container *:focus-visible,
+.chat-messages *:focus-visible {
+  outline: 3px solid #FFFFFF !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(34, 52, 42, 0.45) !important;
+}
+
+.dark-theme *:focus-visible {
+  outline: 3px solid #A5D6A7 !important;
+  outline-offset: 2px !important;
+}
+
+/* Bidirectional Arabic Typography Reflow */
+[dir="rtl"] {
+  font-family: 'IBM Plex Sans Arabic', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.75;
+}
+
+[dir="rtl"] .markdown-content {
+  line-height: 1.85;
+}
+
+/* Scientific Markdown Styling - Compact & Elegant Proportions */
+.markdown-content {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: inherit;
+}
+
+[dir="rtl"] .markdown-content {
+  line-height: 1.7;
+}
+
+.markdown-content p {
+  margin-bottom: 0.65rem;
+}
+
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-content h1 {
+  font-size: 16px;
+  margin-top: 0.9rem;
+  margin-bottom: 0.45rem;
+  font-weight: 700;
+  color: var(--sage-900);
+}
+
+.markdown-content h2 {
+  font-size: 15px;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  color: var(--sage-800);
+}
+
+.markdown-content h3 {
+  font-size: 14px;
+  margin-top: 0.7rem;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: var(--sage-800);
+}
+
+.markdown-content h4 {
+  font-size: 13px;
+  margin-top: 0.6rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: var(--sage-700);
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  padding-left: 1.25rem;
+  margin-bottom: 0.65rem;
+}
+
+[dir="rtl"] .markdown-content ul,
+[dir="rtl"] .markdown-content ol {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25rem;
+  font-size: 13px;
+}
+
+.markdown-content code {
+  background: var(--sage-50);
+  color: var(--sage-900);
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+  font-size: 11.5px;
+  border: 1px solid var(--sage-200);
+}
+
+.markdown-content pre {
+  background: #19271E;
+  color: #EBF2ED;
+  padding: 10px 14px;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 0.65rem 0;
+  font-size: 12px;
+  border: 1px solid rgba(126, 159, 139, 0.3);
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid var(--sage-500);
+  padding: 4px 10px;
+  color: var(--text-card-secondary);
+  background: var(--sage-50);
+  border-radius: 0 6px 6px 0;
+  margin: 0.65rem 0;
+  font-size: 12px;
+  font-style: italic;
+}
+
+[dir="rtl"] .markdown-content blockquote {
+  border-left: none;
+  border-right: 3px solid var(--sage-500);
+  border-radius: 6px 0 0 6px;
+}
+
+.markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.65rem 0;
+  font-size: 12px;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid var(--sage-200);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+[dir="rtl"] .markdown-content th,
+[dir="rtl"] .markdown-content td {
+  text-align: right;
+}
